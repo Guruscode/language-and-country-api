@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "name": "language-and-country-api-2.1",
+  "builds": [
+     { "src": "app.js", "use": "@vercel/node" }
+  ],
+  "routes": [
+     { "src": "/(.*)", "dest": "/app.js" }
+  ]
+}
