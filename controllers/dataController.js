@@ -20,7 +20,10 @@ const getLanguages = async (req, res) => {
 const getCountries = async (req, res) => {
   try {
     const data = await getCountriesData();
-    const countries = data.map(country => country.name.common);
+    const countries = data.map(country => ({
+      name: country.name.common,
+      currency: country.currencies ? Object.values(country.currencies).map(currency => currency.name).join(', ') : 'No currency',
+    }));
 
     res.json(countries);
   } catch (error) {

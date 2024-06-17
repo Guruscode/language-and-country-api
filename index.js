@@ -7,6 +7,7 @@ const swaggerSpecs = require('./swaggerConfig');
 
 const PORT = process.env.PORT || 3000;
 
+
 app.use(express.json());
 
 // Swagger UI
